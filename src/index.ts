@@ -9,7 +9,7 @@ const app = express()
 const fileExt = path.extname(__filename)
 
 //
-async function ImportRoutes(directory = __dirname){
+async function ImportRoutes(directory = `${__dirname}/routes`){
     // Loop through directory
     for (const entry of fs.readdirSync(directory, {withFileTypes: true})){
         // Repeat if is directory
@@ -30,7 +30,7 @@ async function ImportRoutes(directory = __dirname){
         app.use(RouteData.Path, RouteData.Route)
     }
 }
-ImportRoutes(`${__dirname}/routes`)
+ImportRoutes()
 
 // Default
 app.get("/", (req, res) => {
