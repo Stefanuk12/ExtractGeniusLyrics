@@ -1,4 +1,4 @@
-## Testing for valid requests
+### Testing for valid requests
 POST http://127.0.0.1/v1/extract
 Content-Type: application/json
 
@@ -7,7 +7,7 @@ Content-Type: application/json
     "title": "Lucid Dreams"
 }
 
-## Testing for invalid requests
+### Testing for invalid requests
 POST http://127.0.0.1/v1/extract
 Content-Type: application/json
 
