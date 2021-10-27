@@ -1,0 +1,17 @@
+## Testing for valid requests
+POST http://127.0.0.1/v1/extract
+Content-Type: application/json
+
+{
+    "artist": "Juice WRLD",
+    "title": "Lucid Dreams"
+}
+
+## Testing for invalid requests
+POST http://127.0.0.1/v1/extract
+Content-Type: application/json
+
+{
+    "artist": {},
+    "title": "Lucid Dreams"
+}
