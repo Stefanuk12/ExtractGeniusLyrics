@@ -65,7 +65,15 @@ router.post("/extract", async (req, res) => {
                 .replace(/<br>/g, "\n")
                 .replace(/<(?!\s*br\s*\/?)[^>]+>/gi, "");
 
-            Lyrics += $("<textarea/>").html(Lyric).text().trim()
+            Lyric = $("<textarea/>").html(Lyric).text().trim()
+            
+            // Add new lines if previous character isn't \n
+            if (!Lyric.startsWith("\n\n") && Lyrics != ""){
+                Lyric = "\n\n" + Lyric
+            }
+
+            // Add
+            Lyrics += Lyric
         }
     }
 
